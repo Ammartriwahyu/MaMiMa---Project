@@ -1,6 +1,19 @@
-node_modules
-dist
-.env
-.env.local
+# ── Backend ──────────────────────────
+backend/vendor/
+backend/.env
+backend/storage/logs/
+backend/storage/framework/cache/
+backend/storage/framework/sessions/
+backend/storage/framework/views/
+backend/bootstrap/cache/
+
+# ── Frontend ─────────────────────────
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+
+# ── OS / Editor ──────────────────────
 .DS_Store
 *.log
+.idea/
+.vscode/
