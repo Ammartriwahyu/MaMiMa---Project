@@ -30,14 +30,18 @@ export async function get(path) {
   return handleResponse(res)
 }
 
-export async function post(path, body) {
+export async function post(path, body, method = 'POST') {
   const isFormData = body instanceof FormData
   const res = await fetch(`${BASE_URL}${path}`, {
-    method: 'POST',
+    method: method,
     headers: buildHeaders(isFormData),
     body: isFormData ? body : JSON.stringify(body),
   })
   return handleResponse(res)
+}
+
+export async function put(path, body) {
+  return post(path, body, 'PUT')
 }
 
 export async function del(path) {
@@ -49,9 +53,9 @@ export async function del(path) {
 }
 
 // Helper: build FormData and append _method=PUT for Laravel
-export function buildFormData(data, method = 'PUT') {
+export function buildFormData(data, method = 'POST') {
   const fd = new FormData()
-  if (method !== 'POST') fd.append('_method', method)
+  // Jangan append _method, gunakan PUT langsung via fetch
   for (const [key, val] of Object.entries(data)) {
     if (val === null || val === undefined) continue
     if (Array.isArray(val)) {
