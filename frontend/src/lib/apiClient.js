@@ -55,7 +55,6 @@ export async function del(path) {
 // Helper: build FormData and append _method=PUT for Laravel
 export function buildFormData(data, method = 'POST') {
   const fd = new FormData()
-  // Jangan append _method, gunakan PUT langsung via fetch
   for (const [key, val] of Object.entries(data)) {
     if (val === null || val === undefined) continue
     if (Array.isArray(val)) {
