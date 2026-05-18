@@ -20,10 +20,5 @@ mamima/
 | Git | https://git-scm.com | Version control |
 | VS Code | https://code.visualstudio.com | Editor |
 
-**Cara termudah install PHP + MySQL sekaligus:**
-1. Download **Laragon** → https://laragon.org/download
-2. Install (include PHP 8.2, MySQL, dan MySQL Workbench)
-3. Start Laragon → klik "Start All"
-
 ---
 
